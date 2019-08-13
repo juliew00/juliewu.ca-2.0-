@@ -8,16 +8,16 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-    const username = req.body.username;
+    const isProject = Boolean(req.body.isProject);
     const title = req.body.title;
-    const dateFrom = req.body.date.dateFrom;
-    const dateTo = req.body.date.dateTo;
-    const location = req.body.author.location;
+    const dateFrom = Date.parse(req.body.dateFrom);
+    const dateTo = req.body.dateTo ? Date.parse(req.body.dateTo) : null;
+    const location = req.body.location;
     const organization = req.body.organization;
     const description = req.body.description;
 
     const newWork = new Work({
-        username,
+        isProject,
         title,
         dateFrom,
         dateTo,
@@ -46,11 +46,11 @@ router.route('/:id').delete((req, res) => {
 router.route('/update/:id').post((req, res) => {
     Work.findById(req.params.id)
       .then(work => {
-          work.username = req.body.username;
+          work.isProject = Boolean(req.body.isProject);
           work.title = req.body.title;
-          work.dateFrom = req.body.date.dateFrom;
-          work.dateTo = req.body.date.dateTo;
-          work.location = req.body.author.location;
+          work.dateFrom = Date.parse(req.body.dateFrom);
+          work.dateTo = Date.parse(req.body.dateTo);
+          work.location = req.body.location;
           work.organization = req.body.organization;
           work.description = req.body.description;
 

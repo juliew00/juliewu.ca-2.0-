@@ -3,34 +3,23 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const workSchema = new Schema({
-    username: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'User',
-        required: true,
+    isProject: {
+        type: Boolean
     },
     title: {
         type: String,
         required: true,
     },
-    date: {
-        from: {
-            type: Date,
-        },
-        to: {
-            type: Schema.Types.Mixed, // Can be Date or "current"
-        },
+    dateFrom: { 
+        type: Date,
+        required: true,
     },
-    location: {
-        type: String,
+    dateTo: { 
+        type: Date
     },
-    organization: {
-        type: String,
-    },
-    description: {
-        type: String,
-    },
-    links: [{
-        type: String,
-    }]
+    location: { type: String },
+    organization: { type: String },
+    description: { type: String }
 }, {
     timestamps: true,
 });

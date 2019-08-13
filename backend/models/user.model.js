@@ -10,11 +10,7 @@ const userSchema = new Schema({
         trim: true,
     },
     profile: {
-        name: { 
-            first : { type: String },
-            last : { type: String },
-        },
-        gender: { type: String },
+        name : { type: String },
         dob: { type: Date },
         from: { type: String },
         location: { type: String },
@@ -23,21 +19,15 @@ const userSchema = new Schema({
         bio: { type: String }
     },
     interests: {
-        likes: [{ type: String }],
-        music: [{ type: String }],
-        movies: [{ type: String }],
-        tv: [{ type: String }],
+        likes: { type: String },
+        music: { type: String },
+        movies: { type: String },
+        tv: { type: String },
     },
     contact: {
         email: { type: String },
         social: [{ type: String }],
     },
-    blogs : [{
-        type: mongoose.Schema.Types.ObjectId, ref: 'Blog',
-    }],
-    works : [{
-        type: mongoose.Schema.Types.ObjectId, ref: 'Work',
-    }],
 }, {
     timestamps: true,
 });

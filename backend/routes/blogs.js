@@ -8,22 +8,18 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-    const username = req.body.username;
     const title = req.body.title;
-    const authorFirst = req.body.author.first;
-    const authorLast = req.body.author.last;
     const content = req.body.content;
+    const dateCreated = Date.parse(req.body.dateCreated);
 
     const newBlog = new Blog({
-        username,
         title,
-        authorFirst,
-        authorLast,
         content,
+        dateCreated
     });
 
     newBlog.save()
-      .then(() => res.json('Blog added!'))
+      .then(() => res.json('Blog added.'))
       .catch(err => res.status(400).json('Error: ' + err));
 });
 
@@ -42,10 +38,7 @@ router.route('/:id').delete((req, res) => {
 router.route('/update/:id').post((req, res) => {
     Blog.findById(req.params.id)
       .then(blog => {
-        blog.username = req.body.username;
         blog.title = req.body.title;
-        blog.authorFirst = req.body.author.first;
-        blog.authorLast = req.body.author.last;
         blog.content = req.body.content;
 
           blog.save()
