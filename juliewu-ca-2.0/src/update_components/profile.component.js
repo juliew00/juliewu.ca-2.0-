@@ -21,6 +21,7 @@ export default class Profile extends Component {
         this.onChangeTV = this.onChangeTV.bind(this);
         this.onChangeEmail = this.onChangeEmail.bind(this);
         this.onChangeSocial = this.onChangeSocial.bind(this);
+        this.addSocial = this.addSocial.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         // retrieved from mongoDB
@@ -40,7 +41,8 @@ export default class Profile extends Component {
             movies: '',
             tv: '',
             email : '',
-            social : []
+            social : [],
+            newSocial: ''
         }
     }
 
@@ -94,7 +96,17 @@ export default class Profile extends Component {
 
     onChangeEmail(e) { this.setState({ email: e.target.value }) }
 
-    onChangeSocial(e) { this.setState({ social: e.target.value }) }
+    onChangeSocial(e) { this.setState({ newSocial: e.target.value }) }
+
+    addSocial() { 
+        this.setState({ social: this.state.social.concat(this.state.newSocial) })
+        this.setState({ newSocial: "" })
+    }
+
+    removeSocial(index) {
+        this.state.social.splice(index, 1);
+        this.forceUpdate();
+    }
 
     onSubmit(e) {
         e.preventDefault();
@@ -188,25 +200,25 @@ export default class Profile extends Component {
                         <h4>Interests</h4>
                         <div className="form-group">
                             <label>Likes</label>
-                            <input id="name" className="form-control" 
+                            <textarea className="form-control" 
                                 value={this.state.likes}
                                 onChange={this.onChangeLikes} />
                         </div>
                         <div className="form-group">
                             <label>Music</label>
-                            <input id="name" className="form-control" 
+                            <textarea className="form-control" 
                                 value={this.state.music}
                                 onChange={this.onChangeMusic} />
                         </div>
                         <div className="form-group">
                             <label>Movies</label>
-                            <input id="name" className="form-control" 
+                            <textarea className="form-control" 
                                 value={this.state.movies}
                                 onChange={this.onChangeMovies} />
                         </div>
                         <div className="form-group">
                             <label>TV</label>
-                            <input id="name" className="form-control" 
+                            <textarea className="form-control" 
                                 value={this.state.tv}
                                 onChange={this.onChangeTV} />
                         </div>
@@ -216,20 +228,26 @@ export default class Profile extends Component {
                         <h4 >Contact</h4>
                         <div className="form-group">
                             <label>Email</label>
-                            <input id="name" className="form-control" 
+                            <input className="form-control" 
                                 value={this.state.email}
                                 onChange={this.onChangeEmail} />
                         </div>
                         <div className="form-group">
                             <label>Social</label>
-                            <input id="name" className="form-control" 
-                                value={this.state.social}
-                                onChange={this.onChangeSocial} />
+                            <div id="socialList"> 
+                                {this.state.social.map((text,index) =>
+                                    (<p key={index} style={{ color: 'blue' }}>{text}&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button className="btn btn-danger btn-sm" type="" onClick={this.removeSocial.bind(this, index)}>remove</button></p>))}
+                            </div>
+                            <input id="newSocial" className="form-control" value={this.state.newSocial} onChange={this.onChangeSocial}/>
+                            <br />
+                            <button type="button" htmlFor="newSocial" value={this.state.newSocial} className="btn btn-primary btn-sm" onClick={this.addSocial}>add new social</button>
                         </div>
                     </div>
 
                     <div className="form-group">
-                        <input type="submit" value="Save" className="btn btn-primary" />
+                        <br />
+                        <input type="submit" value="Save" className="btn btn-success btn-block" />
                     </div>
                 </form>
             </div>
