@@ -206,7 +206,7 @@ export default class WorkEdit extends Component {
                         <button type="button" htmlFor="newSocial" value={this.state.newLink} className="btn btn-primary btn-sm" onClick={this.addLink}>add new link</button>
                     </div>
                     <div className="form-group">
-                        <input type="submit" value="Save" className="btn btn-primary" />
+                        <input type="submit" value="Save" className="btn btn-success btn-block" />
                     </div>
                 </form>
             </div>
