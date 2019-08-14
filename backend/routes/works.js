@@ -15,6 +15,7 @@ router.route('/add').post((req, res) => {
     const location = req.body.location;
     const organization = req.body.organization;
     const description = req.body.description;
+    const links = req.body.links;
 
     const newWork = new Work({
         isProject,
@@ -24,6 +25,7 @@ router.route('/add').post((req, res) => {
         location,
         organization,
         description,
+        links
     });
 
     newWork.save()
@@ -53,6 +55,7 @@ router.route('/update/:id').post((req, res) => {
           work.location = req.body.location;
           work.organization = req.body.organization;
           work.description = req.body.description;
+          work.links = req.body.links;
 
           work.save()
             .then(() => res.json('Work updated.'))

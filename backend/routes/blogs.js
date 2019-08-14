@@ -10,11 +10,13 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
     const title = req.body.title;
     const content = req.body.content;
+    const links = req.body.links;
     const dateCreated = Date.parse(req.body.dateCreated);
 
     const newBlog = new Blog({
         title,
         content,
+        links,
         dateCreated
     });
 
@@ -40,6 +42,7 @@ router.route('/update/:id').post((req, res) => {
       .then(blog => {
         blog.title = req.body.title;
         blog.content = req.body.content;
+        blog.links = req.body.links;
 
           blog.save()
             .then(() => res.json('Blog updated.'))

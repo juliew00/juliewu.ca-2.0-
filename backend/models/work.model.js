@@ -19,7 +19,8 @@ const workSchema = new Schema({
     },
     location: { type: String },
     organization: { type: String },
-    description: { type: String }
+    description: { type: String },
+    links: [{type: String}]
 }, {
     timestamps: true,
 });

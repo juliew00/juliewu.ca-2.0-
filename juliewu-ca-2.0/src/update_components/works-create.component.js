@@ -14,6 +14,8 @@ export default class WorkCreate extends Component {
         this.onChangeLocation = this.onChangeLocation.bind(this);
         this.onChangeOraganization = this.onChangeOraganization.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
+        this.onChangeLink = this.onChangeLink.bind(this);
+        this.addLink = this.addLink.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
@@ -23,7 +25,8 @@ export default class WorkCreate extends Component {
             dateTo: null,
             location: '',
             organization: '',
-            description: ''
+            description: '',
+            links: []
         }
     }
 
@@ -69,6 +72,22 @@ export default class WorkCreate extends Component {
         })
     }
 
+    onChangeLink(e) {
+        this.setState({
+            newLink: e.target.value
+        })
+    }
+
+    addLink() { 
+        this.setState({ links: this.state.links.concat(this.state.newLink) })
+        this.setState({ newLink: "" })
+    }
+
+    removeLink(index) {
+        this.state.links.splice(index, 1);
+        this.forceUpdate();
+    }
+
     onSubmit(e) {
         e.preventDefault();
         const newWork = {
@@ -78,7 +97,8 @@ export default class WorkCreate extends Component {
             dateTo: this.state.dateTo,
             location: this.state.location,
             organization: this.state.organization,
-            description: this.state.description
+            description: this.state.description,
+            links: this.state.links
         }
 
         console.log(newWork);
@@ -154,6 +174,17 @@ export default class WorkCreate extends Component {
                             onChange={this.onChangeDescription} 
                             rows="5" />
                         <br />
+                    </div>
+                    <div className="form-group">
+                        <label>Links: </label>
+                        <div id="Links"> 
+                            {this.state.links.map((text,index) =>
+                                (<p key={index} style={{ color: 'blue' }}>{text}&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="reset" className="btn btn-danger btn-sm" onClick={this.removeLink.bind(this, index)}>remove</button></p>))}
+                        </div>
+                        <input id="newLink" className="form-control" value={this.state.newLink} onChange={this.onChangeLink}/>
+                        <br />
+                        <button type="button" htmlFor="newSocial" value={this.state.newLink} className="btn btn-primary btn-sm" onClick={this.addLink}>add new link</button>
                     </div>
                     <div className="form-group">
                         <input type="submit" value="Create" className="btn btn-primary" />

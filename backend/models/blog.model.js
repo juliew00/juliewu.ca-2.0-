@@ -8,6 +8,7 @@ const blogSchema = new Schema({
         required: true,
     },
     content: { type: String },
+    links: [{type: String}],
     dateCreated: {type: Date}
 }, {
     timestamps: true,

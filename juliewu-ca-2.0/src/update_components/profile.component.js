@@ -237,7 +237,7 @@ export default class Profile extends Component {
                             <div id="socialList"> 
                                 {this.state.social.map((text,index) =>
                                     (<p key={index} style={{ color: 'blue' }}>{text}&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <button className="btn btn-danger btn-sm" type="" onClick={this.removeSocial.bind(this, index)}>remove</button></p>))}
+                                    <button type="reset" className="btn btn-danger btn-sm" onClick={this.removeSocial.bind(this, index)}>remove</button></p>))}
                             </div>
                             <input id="newSocial" className="form-control" value={this.state.newSocial} onChange={this.onChangeSocial}/>
                             <br />
