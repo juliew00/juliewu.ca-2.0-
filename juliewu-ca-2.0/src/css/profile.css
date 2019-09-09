@@ -32,11 +32,12 @@
 .terminal-window {
     padding: var(--button-spacing);
 
-    background-color: #30353A;
+    background-color: whitesmoke;
+    opacity: 0.95;
 
     height: var(--terminal-height);
 
-    font-family: Menlo, Monaco, "Consolas", "Courier New", "Courier";
+    font-family: "Lucida Console", Monaco, monospace;
     font-weight: 200;
     font-size: 13px;
 
@@ -50,7 +51,6 @@
 
     border-bottom-left-radius: 1%;
     border-bottom-right-radius: 1%;
-
 }
 
 /* Header */
@@ -61,12 +61,13 @@
     background: var(--header-color);
 
     border-top: 1px solid white;
+    border-bottom: 1px solid var(--window-border);
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
 
     color: rgba(0, 0, 0, 0.7);
 
-    font-family: Menlo, Monaco, "Consolas", "Courier New", "Courier";
+    font-family: "Lucida Console", Monaco, monospace;
     font-size: 13px;
 
     text-align: center;
@@ -118,7 +119,7 @@ p {
 }
 
 .text {
-    color: white;
+    color: black;
     padding: 0% 1%;
 }
 
@@ -132,6 +133,7 @@ p {
 }
 
 .last::after {
-    content: "|";
+    content: "";
+    border-right: 10px solid;
     animation: blink 1s steps(1) infinite;
 }

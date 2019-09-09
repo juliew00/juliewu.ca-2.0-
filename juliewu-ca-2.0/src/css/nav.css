@@ -1,0 +1,39 @@
+.main-nav {
+    background-image: url("https://66.media.tumblr.com/7d22896e582d06375c5d863a6a7022e5/tumblr_oumcxm8Z5Q1uzwgsuo1_400.gif");
+    background-size: cover;
+}
+.navbar-brand {
+    font-family: menlo, "Lucida Console", Monaco, monospace;
+    font-size: 4vw;
+
+}
+
+.navbar-nav {
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+
+    text-align: center;
+}
+
+.main-nav-link {
+    margin-left: 5vh;
+
+    font-family: menlo, "Lucida Console", Monaco, monospace;
+    font-size: 2vw;
+    font-style: italic;
+
+    color: black;
+
+    padding-left: 5vw;
+    outline: none;
+    
+    /* for hover effect */
+    background: linear-gradient(to right, rgba(255,255,255,0) 50%, black 50%);
+    transition: .15s ease-in-out;
+    -webkit-transition: .15s ease-in-out;
+    -o-transition: .15s ease-in-out;
+    -moz-transition: .15s ease-in-out;
+    display: inline-block;
+    background-position: left bottom;
+    background-size: 200%;
+}

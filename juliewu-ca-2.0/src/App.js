@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Home from "./components/home.component";
+import About from "./components/profile.component";
 
 import Profile from "./update_components/profile.component";
 import WorksList from "./update_components/works-list.component";
@@ -18,6 +19,7 @@ function App() {
       <div className="">
         <Switch>
             <Route path="/" exact render={() => <Home />} />
+            <Route path="/blog" exact render={() => <h1>Coming Soon!</h1>}/>
 
             <Route path="/update" exact component={Profile} />
             <Route path="/update/works" exact component={WorksList} />
