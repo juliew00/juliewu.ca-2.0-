@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-export default class UpdateNavbar extends Component {
+export default class NavBar extends Component {
     render() {
         return (
             <nav className="navbar navbar-expand">
                 <div className="collpase navbar-collapse">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <Link to="/update" className="nav-link">Profile</Link>
+                            <Link to="/About" className="nav-link">About</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/update/works" className="nav-link">Works</Link>
+                            <Link to="/Resume" className="nav-link">Resume</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/update/blogs" className="nav-link">Blogs</Link>
+                            <Link to="/Projects" className="nav-link">Projects</Link>
                         </li>
-                    </ul>
-                    <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <Link to="/" className="nav-link">back to home</Link>
+                            <Link to="/Work" className="nav-link">Work</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="/Blogs" className="nav-link">Blogs</Link>
                         </li>
                     </ul>
                 </div>

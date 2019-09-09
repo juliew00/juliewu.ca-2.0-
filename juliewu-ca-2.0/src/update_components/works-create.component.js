@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css"
 import axios from 'axios';
+import UpdateNavbar from './navbar.component';
 
 export default class WorkCreate extends Component {
     constructor(props){
@@ -111,7 +112,9 @@ export default class WorkCreate extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
+                <UpdateNavbar />
+                <br />
                 <h3>Create New Work Form</h3>
                 <br />
                 <form onSubmit={this.onSubmit}>

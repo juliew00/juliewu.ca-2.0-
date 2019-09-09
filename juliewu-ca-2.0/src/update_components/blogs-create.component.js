@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "react-datepicker/dist/react-datepicker.css"
 import axios from 'axios';
+import UpdateNavbar from './navbar.component';
 
 export default class BlogCreate extends Component {
 
@@ -69,7 +70,9 @@ export default class BlogCreate extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
+                <UpdateNavbar />
+                <br />
                 <h3>Create New Blog Form</h3>
                 <br />
                 <form onSubmit={this.onSubmit}>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import UpdateNavbar from './navbar.component';
 
 const Work = props => (
     <tr>
@@ -54,7 +55,9 @@ export default class WorksList extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
+                <UpdateNavbar />
+                <br />
                 <Link to={"/update/works/create"} className="btn btn-success float-right"> Create New Work</Link>
                 <br />
                 <h3 style={{ paddingTop: '50px'}}>Work List</h3>

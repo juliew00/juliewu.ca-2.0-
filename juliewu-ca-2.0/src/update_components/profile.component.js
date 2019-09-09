@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css"
 import axios from 'axios';
+import UpdateNavbar from './navbar.component';
 
 export default class Profile extends Component {
 
@@ -141,12 +142,14 @@ export default class Profile extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
+                <UpdateNavbar />
+                <br />
                 <h3>Edit Your Profile</h3>
                 <br />
                 <form onSubmit={this.onSubmit}>
 
-                    <div className="profile">
+                    <div className="update-profile">
                         <h4>Profile</h4>
                         <div className="form-group">
                             <label>Name</label>
