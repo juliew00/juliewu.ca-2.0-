@@ -95,8 +95,8 @@
 
 	background-color: var(--button-not-focused);
 
-	border: 0.25px solid rgba(0, 0, 0, 0.2);
-	border-radius: 50%;
+	border: 0.5px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
 
 	color: rgba(0, 0, 0, 0.5);
 }
