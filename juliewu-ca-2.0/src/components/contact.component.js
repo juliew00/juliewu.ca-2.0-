@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../css/contact.css';
 
 export default class Contact extends Component {
     render() {
@@ -13,7 +14,7 @@ export default class Contact extends Component {
                             <a href="mailto:julie-wu@outlook.com" target="_blank" rel="noopener noreferrer"><i className="fa fa-envelope"></i></a> 
                     </div>
                     <div className="container-fluid text-center">
-                        <p>Created &amp; Developed by Julie Wu - 2019</p>
+                        <p id="FooterNote">Created &amp; Developed by Julie Wu - 2019</p>
                     </div>
                 </footer>
             </div>

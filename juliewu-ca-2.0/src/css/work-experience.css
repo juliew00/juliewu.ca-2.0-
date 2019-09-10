@@ -1,0 +1,4 @@
+.works {
+    color: white;
+    background-image: -webkit-radial-gradient(top, circle cover, rgb(32, 32, 32) 0%, rgb(0, 0, 0) 80%);
+}

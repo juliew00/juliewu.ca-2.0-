@@ -1,9 +1,7 @@
 .resume {
-    /*
-    background-image: url("https://66.media.tumblr.com/7d22896e582d06375c5d863a6a7022e5/tumblr_oumcxm8Z5Q1uzwgsuo1_400.gif");
+    background-image: url("https://media.giphy.com/media/l378wcSfS7eXWQgla/giphy.gif");
+    background-position-y: 0%;
     background-size: cover;
-    */
-    background-image: -webkit-radial-gradient(top, circle cover, white 0%, whitesmoke 80%);
 
     padding: 5%;
 }
@@ -12,7 +10,7 @@
     font-family: menlo, "Lucida Console", Monaco, monospace;
     font-size: 4vw;
 
-    -webkit-text-stroke: 2px black;
+    /*-webkit-text-stroke: 2px rgb(32, 32, 32);*/
 
     animation: colorchange 10s infinite alternate;
 }
