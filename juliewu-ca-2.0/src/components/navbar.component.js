@@ -50,7 +50,7 @@ export default class NavBar extends Component {
             <div className="container-fluid main-nav">
                 <nav className="navbar navbar-expand">
                     <div className="collpase navbar-collapse">
-                        <a className="navbar-brand mr-auto">Hello World!</a>
+                        <a className="navbar-brand mr-auto">> cd /users/juliewu</a>
                         <ul className="navbar-nav ml-auto">
                             <li className="">
                                 <a style={styleAbout} href="/" className="nav-link main-nav-link" 

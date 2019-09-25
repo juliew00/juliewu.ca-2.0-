@@ -11,10 +11,10 @@ export default class Contact extends Component {
                             <a href="https://github.com/juliew00" target="_blank" rel="noopener noreferrer"><i className="fa fa-github"></i></a> 
                             <a href="https://twitter.com/JumboJulie" target="_blank" rel="noopener noreferrer"><i className="fa fa-twitter"></i></a>  
                             <a href="https://linkedin.com/in/julie-wu" target="_blank" rel="noopener noreferrer"><i className="fa fa-linkedin"></i></a>  
-                            <a href="mailto:julie-wu@outlook.com" target="_blank" rel="noopener noreferrer"><i className="fa fa-envelope"></i></a> 
+                            <a href="mailto:julie-wu@outlook.com" rel="noopener noreferrer"><i className="fa fa-envelope"></i></a> 
                     </div>
                     <div className="container-fluid text-center">
-                        <p id="FooterNote">Created &amp; Developed by Julie Wu - 2019</p>
+                        <p id="FooterNote">created &amp; developed by julie wu &mdash; 2019 &copy;</p>
                     </div>
                 </footer>
             </div>

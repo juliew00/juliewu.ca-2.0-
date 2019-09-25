@@ -7,7 +7,6 @@
 }
 
 #link {
-    font-family: menlo, "Lucida Console", Monaco, monospace;
     font-size: 4vw;
 
     /*-webkit-text-stroke: 2px rgb(32, 32, 32);*/
@@ -17,13 +16,13 @@
 
 @keyframes colorchange {
     0% {
-      color: yellow;
+      color: rgb(255, 196, 0);
     }
     10% {
-      color: #f08a5d;
+      color: #b64c1f;
     }
     20% {
-      color: #b83b5e;
+      color: #9b2446;
     }
     30% {
       color: #6a2c70;
@@ -35,7 +34,7 @@
       color: #6639a6;
     }
     60% {
-      color: #3490de;
+      color: #18568b;
     }
     70% {
       color: darkblue;
@@ -44,7 +43,7 @@
       color: #086972;
     }
     90% {
-      color: #17b978;
+      color: #165f42;
     }
     100% {
       color: darkgreen;

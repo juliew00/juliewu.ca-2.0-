@@ -51,7 +51,7 @@ router.route('/update/:id').post((req, res) => {
           work.isProject = Boolean(req.body.isProject);
           work.title = req.body.title;
           work.dateFrom = Date.parse(req.body.dateFrom);
-          work.dateTo = Date.parse(req.body.dateTo);
+          work.dateTo = req.body.dateTo != null ? Date.parse(req.body.dateTo) : null;
           work.location = req.body.location;
           work.organization = req.body.organization;
           work.description = req.body.description;

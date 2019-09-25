@@ -5,6 +5,9 @@ import axios from 'axios';
 import UpdateNavbar from './navbar.component';
 
 export default class WorkEdit extends Component {
+
+
+
     constructor(props){
         super(props);
 
@@ -38,7 +41,7 @@ export default class WorkEdit extends Component {
               isProject: response.data.isProject,
               title: response.data.title,
               dateFrom: new Date(response.data.dateFrom),
-              dateTo: response.data.dateTo != null ? new Date(response.data.dateTo) : null,
+              dateTo: new Date(response.data.dateTo),
               location: response.data.location,
               organization: response.data.organization,
               description: response.data.description,

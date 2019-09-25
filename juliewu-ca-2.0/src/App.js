@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Home from "./components/home.component";
-import About from "./components/profile.component";
 
 import Profile from "./update_components/profile.component";
 import WorksList from "./update_components/works-list.component";

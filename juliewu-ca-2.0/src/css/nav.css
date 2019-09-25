@@ -3,9 +3,7 @@
     background-size: cover;
 }
 .navbar-brand {
-    font-family: menlo, "Lucida Console", Monaco, monospace;
     font-size: 4vw;
-    font-weight: bold;
 }
 
 .navbar-nav {
@@ -18,7 +16,6 @@
 .main-nav-link {
     margin-left: 5vh;
 
-    font-family: menlo, "Lucida Console", Monaco, monospace;
     font-size: 2vw;
     font-style: italic;
 
