@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const path = require('path');
 
 require('dotenv').config();
 
@@ -24,6 +25,13 @@ const worksRouter = require('./routes/works');
 app.use('/users', userRouter);
 app.use('/blogs', blogRouter);
 app.use('/works', worksRouter);
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static('juliewu-ca-2.0/build'));
+    app.get('*', (req,res) => {
+        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html')); // relative path
+    });
+}
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
