@@ -27,9 +27,9 @@ app.use('/blogs', blogRouter);
 app.use('/works', worksRouter);
 
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static('juliewu-ca-2.0/build'));
+    app.use(express.static('../juliewu-ca-2.0/build'));
     app.get('*', (req,res) => {
-        res.sendFile(path.join(__dirname, 'juliewu-ca-2.0', 'build', 'index.html')); // relative path
+        res.sendFile(path.join(__dirname + "../juliewu-ca-2.0/build/index.html"));
     });
 }
 
